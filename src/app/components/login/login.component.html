@@ -16,23 +16,37 @@
             <span>Regístrate ahora</span>
         </div>
 
-        <div class="form-container flex flex-col gap-4">
-            <h2>Iniciar sesión en Coink</h2>
+        <div class="flex justify-center items-center h-full">
+            <div class="form-container flex flex-col gap-4 w-2/3">
+                <h2>Iniciar sesión en Coink</h2>
 
-            <div class="form-group flex flex-col gap-2 relative">
-                <label>Correo electrónico</label>
-                <input type="text" placeholder="Input text">
-                <i class="absolute bi bi-person"></i>
+                <div class="form-group flex flex-col gap-2 relative">
+                    <label>Correo electrónico</label>
+                    <input type="text" placeholder="Input text">
+                    <i class="absolute bi bi-person"></i>
+                </div>
+
+                <div class="form-group flex flex-col gap-2 relative">
+                    <label>Contraseña</label>
+                    <input type="password" placeholder="Input text" #password>
+                    <i class="absolute bi bi-eye" *ngIf="password.type == 'text'"
+                        (click)="password.type = 'password'"></i>
+                    <i class="absolute bi bi-eye-slash" *ngIf="password.type == 'password'"
+                        (click)="password.type = 'text'"></i>
+                </div>
+
+                <div class="form-check flex items-center gap-2">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Recordarme
+                    </label>
+                </div>
+
+                <div class="container-btns flex flex-col justify-center items-center gap-6 mt-12">
+                    <button type="button" class="btn btn-primary">Iniciar sesión</button>
+                    <span>¿Olvidaste tu contraseña?</span>
+                </div>
             </div>
-
-            <div class="form-group flex flex-col gap-2 relative">
-                <label>Contraseña</label>
-                <input type="password" placeholder="Input text" #password>
-                <i class="absolute bi bi-eye"  *ngIf="password.type == 'text'" (click)="password.type = 'password'"></i>
-                <i class="absolute bi bi-eye-slash"  *ngIf="password.type == 'password'" (click)="password.type = 'text'"></i>
-            </div>
-
-            <div></div>
         </div>
     </div>
 </div>

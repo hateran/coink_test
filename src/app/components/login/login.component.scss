@@ -71,6 +71,36 @@
                     cursor: pointer;
                 }
             }
+
+            .form-check {
+                .form-check-label {
+                    color: var(--color_2);
+                    font-family: 'montserrat_semibold', 'semibold', sans-serif;
+                    font-size: 14px;
+                }
+            }
+
+            .container-btns {
+                .btn-primary {
+                    font-family: 'montserrat_bold', 'bold', sans-serif;
+                    font-size: 16px;
+                    width: 330px;
+                    height: 45px;
+                    color: #ffffff;
+                    background-color: #BEBEBE;
+                    border-radius: 100px;
+                }
+
+                .btn-primary:hover {
+                    background-color: var(--color_2);
+                }
+
+                span {
+                    color: var(--color_2);
+                    font-family: 'montserrat_semibold', 'semibold', sans-serif;
+                    font-size: 14px;
+                }
+            }
         }
     }
 }
