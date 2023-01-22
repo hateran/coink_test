@@ -2,6 +2,7 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
 
 :root {
     --color_1: #003336;
@@ -17,4 +18,14 @@ body {
 body {
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+@font-face {
+    font-family: montserrat_bold;
+    src: url(./assets/fonts/Montserrat-Bold.ttf) format("opentype");
+}
+
+@font-face {
+    font-family: montserrat_medium;
+    src: url(./assets/fonts/Montserrat-Medium.ttf) format("opentype");
 }

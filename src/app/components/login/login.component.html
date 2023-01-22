@@ -1,1 +1,38 @@
-<p>login works!</p>
+<div class="login-container grid grid-cols-2 h-full w-full">
+    <div class="sub-container1 flex justify-center relative">
+        <div class="flex flex-col justify-center items-center gap-4 w-2/3 h-full">
+            <h1 class="mb-2">¡Bienvenido a la herramienta de registro Coink!</h1>
+
+            <img src="../../../assets/logo.png" alt="">
+
+            <p>Coink para tu día a día.<br />Empieza ahorrando y cumple tus sueños con propósito.</p>
+        </div>
+        <img class="stars absolute" src="../../../assets/icons/stars.png" alt="">
+    </div>
+
+    <div class="sub-container2 flex flex-col pb-6 px-12 pt-10">
+        <div class="flex justify-end gap-4">
+            <span>¿Aún no tienes una cuenta?</span>
+            <span>Regístrate ahora</span>
+        </div>
+
+        <div class="form-container flex flex-col gap-4">
+            <h2>Iniciar sesión en Coink</h2>
+
+            <div class="form-group flex flex-col gap-2 relative">
+                <label>Correo electrónico</label>
+                <input type="text" placeholder="Input text">
+                <i class="absolute bi bi-person"></i>
+            </div>
+
+            <div class="form-group flex flex-col gap-2 relative">
+                <label>Contraseña</label>
+                <input type="password" placeholder="Input text" #password>
+                <i class="absolute bi bi-eye"  *ngIf="password.type == 'text'" (click)="password.type = 'password'"></i>
+                <i class="absolute bi bi-eye-slash"  *ngIf="password.type == 'password'" (click)="password.type = 'text'"></i>
+            </div>
+
+            <div></div>
+        </div>
+    </div>
+</div>
