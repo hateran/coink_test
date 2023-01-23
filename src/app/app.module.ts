@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavigationModule } from './components/navigation/navigation.module';
 import { NavigationRoutingModule } from './components/navigation/navigation-routing.module';
 import { LoginModule } from './components/login/login.module';
+import { CharactersModule } from './components/characters/characters.module';
 
 //Material
 import { MatIconModule } from '@angular/material/icon';
@@ -20,6 +21,7 @@ import { MatIconModule } from '@angular/material/icon';
     NavigationModule,
     NavigationRoutingModule,
     LoginModule,
+    CharactersModule,
     MatIconModule
   ],
   providers: [],

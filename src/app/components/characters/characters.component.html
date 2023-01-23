@@ -1,1 +1,80 @@
-<p>characters works!</p>
+<div class="character-container p-10">
+    <div class="container1 mb-6">
+        <span>Tarjetas Visa en dispensadores</span> / <span>Solicitud tarjetas</span>
+    </div>
+
+    <h1 class="title mb-2">SOLICITUD TARJETAS</h1>
+
+    <button mat-icon-button type="button">
+        <mat-icon>search</mat-icon>
+        <span>Buscar</span>
+    </button>
+
+    <form class="flex gap-4 my-4">
+        <mat-form-field class="example-full-width">
+            <mat-label>Usuario</mat-label>
+            <input matInput placeholder="Juan">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Fechas</mat-label>
+            <input matInput placeholder="dia/mes/año - dia/mes/año">
+        </mat-form-field>
+    </form>
+
+    <div class="flex gap-4">
+        <button type="button" class="btn btn-primary">
+            Limpiar filtros
+        </button>
+
+        <button type="button" class="btn btn-primary">
+            Buscar
+        </button>
+    </div>
+
+    <div class="flex justify-end my-4">
+        <button type="button" class="btn btn-primary">
+            Solicitar tarjetas
+        </button>
+    </div>
+
+    <div class="content-table">
+        <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+
+        <div class="table-responsive">
+            <table mat-table [dataSource]="dataSource" class="table mat-elevation-z2 w-full" matSort
+                (matSortChange)="sortData($event)">
+
+                <ng-container matColumnDef="Usuario">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header="Usuario"> Usuario </th>
+                    <td mat-cell *matCellDef="let element">{{element.name}}</td>
+                </ng-container>
+
+                <ng-container matColumnDef="Episode">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header="Episode"> Episodios </th>
+                    <td mat-cell *matCellDef="let element">
+                        {{element.episode.length}}</td>
+                </ng-container>
+
+                <ng-container matColumnDef="Datecreated">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header="Datecreated"> Fecha de creación </th>
+                    <td mat-cell *matCellDef="let element">
+                        {{element.created | date : 'dd/MM/yyyy'}}</td>
+                </ng-container>
+
+                <ng-container matColumnDef="Species">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header="Species"> Especie </th>
+                    <td mat-cell *matCellDef="let element">{{element.species}}</td>
+                </ng-container>
+
+                <tr class="mat-row" *matNoDataRow>
+                    <td class="mat-cell text-center" colspan="5">No hay personas para mostrar</td>
+                </tr>
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;" class="example-element-row"></tr>
+            </table>
+        </div>
+        <mat-paginator #paginator (page)="pageChange($event)" [pageSize]="100" [pageSizeOptions]="[10, 20, 30]">
+        </mat-paginator>
+    </div>
+</div>

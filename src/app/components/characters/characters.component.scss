@@ -1,0 +1,38 @@
+.character-container {
+    font-family: 'montserrat_medium', 'medium', sans-serif;
+    background-color: #F2F2F2;
+
+    .container1 {
+        font-size: 16px;
+        font-weight: 600;
+
+        :last-child {
+            color: var(--color_2);
+        }
+    }
+
+    .title {
+        color: var(--color_2);
+        font-weight: 600;
+    }
+
+    .btn-primary {
+        width: 200px;
+        height: 30px;
+        background-color: transparent;
+        border: 1px solid var(--color_2);
+        border-radius: 2px;
+        color: var(--color_2);
+        font-weight: 600;
+    }
+
+    .btn-primary:hover {
+        background-color: var(--color_2);
+        color: #ffffff;
+    }
+
+    .mat-header-cell {
+        background: var(--color_2);
+        color: #ffffff;
+    }
+}

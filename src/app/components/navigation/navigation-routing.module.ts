@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CharactersComponent } from '../characters/characters.component';
 import { LoginComponent } from '../login/login.component';
 import { NavigationComponent } from './navigation.component';
 
@@ -13,7 +12,7 @@ const routes: Routes = [
     path: '', component: NavigationComponent, children: [
       {
         path: 'backoffice',
-        component: CharactersComponent
+        loadChildren: () => import('../characters/characters.module').then(m => m.CharactersModule)
       }
     ]
   },
