@@ -8,6 +8,9 @@ import { NavigationModule } from './components/navigation/navigation.module';
 import { NavigationRoutingModule } from './components/navigation/navigation-routing.module';
 import { LoginModule } from './components/login/login.module';
 
+//Material
+import { MatIconModule } from '@angular/material/icon';
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -16,7 +19,8 @@ import { LoginModule } from './components/login/login.module';
     BrowserAnimationsModule,
     NavigationModule,
     NavigationRoutingModule,
-    LoginModule
+    LoginModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

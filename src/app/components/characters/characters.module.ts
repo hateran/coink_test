@@ -10,6 +10,7 @@ import { CharactersComponent } from './characters.component';
   ],
   imports: [
     CommonModule
-  ]
+  ],
+  exports: [CharactersComponent]
 })
 export class CharactersModule { }

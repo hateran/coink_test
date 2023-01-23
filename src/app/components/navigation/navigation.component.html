@@ -1,1 +1,62 @@
-<p>navigation works!</p>
+<div class="relative h-full">
+    <ng-container>
+        <mat-toolbar class="header" color="primary">
+            <div class="container-header grid grid-cols-2 items-center w-full">
+                <img class="justify-self-center object-contain w-24" src="../../../assets/full-logo.png">
+
+                <div class="subcontainer-header grid grid-cols-3 items-center">
+                    <button mat-icon-button type="button" (click)="drawer.toggle()" matSuffix>
+                        <mat-icon>menu</mat-icon>
+                    </button>
+
+                    <h1 class="justify-self-center">BACKOFFICE</h1>
+
+                    <i class="bi bi-person-circle justify-self-end"></i>
+                </div>
+            </div>
+        </mat-toolbar>
+        <mat-sidenav-container class="sidenav-container">
+            <mat-sidenav (openedStart)="isOpened()" (closedStart)="isOpened()" #drawer class="sidenav"
+                [fixedInViewport]="false" [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="'side'"
+                [opened]="(isHandset$ | async) === false">
+
+                <div class="container-user flex flex-col items-center gap-2">
+                    <div class="picture mt-8 mb-6">
+                    </div>
+
+                    <div class="flex gap-2">
+                        <i class="bi bi-lock-fill"></i>
+                        <span>Jeff</span>
+                    </div>
+                </div>
+
+                <hr class="my-4" />
+
+                <mat-nav-list>
+                    <mat-accordion>
+                        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    {{active}}
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <a mat-list-item>
+                                <p class="navigation_title">Crear dispensador</p>
+                            </a>
+                            <a mat-list-item>
+                                <p class="navigation_title">Monitorear y editar dispensadores</p>
+                            </a>
+                            <a mat-list-item routerLink="backoffice" routerLinkActive="active-list-item">
+                                <p class="navigation_title">Solicitud tarjetas</p>
+                            </a>
+                        </mat-expansion-panel>
+                    </mat-accordion>
+                </mat-nav-list>
+
+            </mat-sidenav>
+            <mat-sidenav-content style="overflow-y: hidden;">
+                <router-outlet></router-outlet>
+            </mat-sidenav-content>
+        </mat-sidenav-container>
+    </ng-container>
+</div>
