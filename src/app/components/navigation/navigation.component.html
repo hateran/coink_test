@@ -1,10 +1,12 @@
 <div class="relative h-full">
     <ng-container>
         <mat-toolbar class="header" color="primary">
-            <div class="container-header grid grid-cols-2 items-center w-full">
-                <img class="justify-self-center object-contain w-24" src="../../../assets/full-logo.png">
+            <div class="container-header flex items-center w-full">
+                <div class="logo flex justify-center">
+                    <img class="justify-self-center object-contain w-24" src="../../../assets/full-logo.png">
+                </div>
 
-                <div class="subcontainer-header grid grid-cols-3 items-center">
+                <div class="subcontainer-header flex justify-between items-center w-full">
                     <button mat-icon-button type="button" (click)="drawer.toggle()" matSuffix>
                         <mat-icon>menu</mat-icon>
                     </button>

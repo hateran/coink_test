@@ -2,10 +2,11 @@
     background-color: var(--color_2);
 
     .container-header {
-        grid-template-columns: 20% 80% !important;
+        .logo {
+            width: 340px;
+        }
 
         .subcontainer-header {
-            grid-template-columns: 10% 80% 10% !important;
 
             h1 {
                 font-weight: 500;
